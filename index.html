@@ -1081,6 +1081,21 @@ footer {
     height:52px
   }
 }
+
+/* HERO CON LA IMAGEN EDITADA DE REFERENCIA.
+   Imagen del hero: images/hero-torenza.png.
+   Para reemplazarla, conserva ese nombre o edita la ruta en la sección HERO.
+   Las zonas de enlace activan los botones y la navegación de la imagen. */
+header { display: none; }
+.hero.hero-reference { min-height: 0; background: #a4000c; position: relative; }
+.hero-reference::before, .hero-reference::after { display: none; }
+.hero-reference > img { display: block; width: 100%; height: auto; }
+.hero-reference .hero-link { position: absolute; z-index: 5; display: block; border-radius: 999px; }
+.hero-reference .hero-link:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.hero-reference .hero-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+#menu > .section-title:first-child { display: none; }
+#menu .featured { padding-top: 12px; }
+
 </style>
   </head>
   <body>
@@ -1125,62 +1140,24 @@ footer {
     </header>
     <main>
       <!-- PORTADA PRINCIPAL -->
-      <section class="hero" id="inicio">
-        <div class="wrap hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow">
-              Pizzería Torenza presenta
-            </div>
-            <h1>
-              Tu pasaporte
-              <span>
-                al buen sabor
-              </span>
-            </h1>
-            <p>
-              Pizzas, hamburguesas, salchipapas, perros y mucho más.
-            </p>
-            <div class="hero-actions">
-              <a class="btn" href="#menu">
-                ◉  Ver menú
-              </a>
-              <a class="btn btn-outline" href="#menu">
-                Pedir ahora
-              </a>
-            </div>
-            <div class="hero-perks">
-              <div class="hero-perk">
-                <i class="perk-icon">
-                  🍕
-                </i>
-                <span>
-                  Ingredientes
-                  <br>
-                  de calidad
-                </span>
-              </div>
-              <div class="hero-perk">
-                <i class="perk-icon">
-                  🍔
-                </i>
-                <span>
-                  Sabor auténtico
-                  <br>
-                  en cada bocado
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-food">
-            <img class="food-photo food-burger" src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=85&amp;w=900&amp;auto=format&amp;fit=crop" alt="Hamburguesa de la casa">
-            <img class="food-photo food-pizza" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=85&amp;w=900&amp;auto=format&amp;fit=crop" alt="Pizza recién horneada">
-            <div class="hero-stamp">
-              Pizza
-              <br>
-              lovers ♡
-            </div>
-          </div>
-        </div>
+      <!-- ========================================
+           HERO: IMAGEN EDITADA DE REFERENCIA
+           Archivo: images/hero-torenza.png
+           Los textos del hero forman parte de la imagen.
+           Los enlaces superpuestos se editan debajo.
+           ======================================== -->
+      <section class="hero hero-reference" id="inicio" aria-label="Pizzería Torenza: tu pasaporte al buen sabor">
+        <img src="images/hero-torenza.png"
+          alt="Pizzería Torenza. Tu pasaporte al buen sabor. Pizzas, hamburguesas, salchipapas, perros y mucho más. Una hamburguesa y una pizza sobre una tabla de madera."
+          fetchpriority="high">
+        <a class="hero-link" href="#inicio" style="left:29%;top:4%;width:4%;height:7%" aria-label="Inicio"><span>Inicio</span></a>
+        <a class="hero-link" href="#menu" style="left:35%;top:4%;width:5%;height:7%" aria-label="Menú"><span>Menú</span></a>
+        <a class="hero-link" href="#promos" style="left:41%;top:4%;width:6%;height:7%" aria-label="Promos"><span>Promos</span></a>
+        <a class="hero-link" href="#nosotros" style="left:48%;top:4%;width:7%;height:7%" aria-label="Nosotros"><span>Nosotros</span></a>
+        <a class="hero-link" href="#ubicacion" style="left:57%;top:4%;width:7%;height:7%" aria-label="Ubicación"><span>Ubicación</span></a>
+        <a class="hero-link" href="#menu" style="left:79%;top:3%;width:15%;height:8%" aria-label="Pedir ahora"><span>Pedir ahora</span></a>
+        <a class="hero-link" href="#menu" style="left:7%;top:58%;width:18%;height:9%" aria-label="Ver menú"><span>Ver menú</span></a>
+        <a class="hero-link" href="#menu" style="left:26%;top:58%;width:15%;height:9%" aria-label="Pedir ahora"><span>Pedir ahora</span></a>
       </section>
       <!-- CINCO TARJETAS DESTACADAS, COMBO Y BENEFICIOS -->
       <section class="wrap" id="menu">
