@@ -1096,6 +1096,38 @@ header { display: none; }
 #menu > .section-title:first-child { display: none; }
 #menu .featured { padding-top: 12px; }
 
+
+/* BOTONES PEQUEÑOS DE CATEGORÍA.
+   Cada PNG se muestra como acceso directo a su sección de la carta. */
+.featured.category-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  margin-bottom: 8px;
+}
+.category-image {
+  display: block;
+  flex: 0 0 90px;
+  width: 90px;
+  transition: transform .2s ease;
+}
+.category-image:hover { transform: translateY(-3px); }
+.category-image:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+.category-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+@media (max-width: 680px) {
+  .featured.category-images { gap: 12px; padding: 10px 0; }
+  .category-image { flex-basis: 80px; width: 80px; }
+}
+
 </style>
   </head>
   <body>
@@ -1150,14 +1182,46 @@ header { display: none; }
         <img src="images/hero-torenza.png"
           alt="Pizzería Torenza. Tu pasaporte al buen sabor. Pizzas, hamburguesas, salchipapas, perros y mucho más. Una hamburguesa y una pizza sobre una tabla de madera."
           fetchpriority="high">
-        <a class="hero-link" href="#inicio" style="left:29%;top:4%;width:4%;height:7%" aria-label="Inicio"><span>Inicio</span></a>
-        <a class="hero-link" href="#menu" style="left:35%;top:4%;width:5%;height:7%" aria-label="Menú"><span>Menú</span></a>
-        <a class="hero-link" href="#promos" style="left:41%;top:4%;width:6%;height:7%" aria-label="Promos"><span>Promos</span></a>
-        <a class="hero-link" href="#nosotros" style="left:48%;top:4%;width:7%;height:7%" aria-label="Nosotros"><span>Nosotros</span></a>
-        <a class="hero-link" href="#ubicacion" style="left:57%;top:4%;width:7%;height:7%" aria-label="Ubicación"><span>Ubicación</span></a>
-        <a class="hero-link" href="#menu" style="left:79%;top:3%;width:15%;height:8%" aria-label="Pedir ahora"><span>Pedir ahora</span></a>
-        <a class="hero-link" href="#menu" style="left:7%;top:58%;width:18%;height:9%" aria-label="Ver menú"><span>Ver menú</span></a>
-        <a class="hero-link" href="#menu" style="left:26%;top:58%;width:15%;height:9%" aria-label="Pedir ahora"><span>Pedir ahora</span></a>
+        <a class="hero-link" href="#inicio" style="left:29%;top:4%;width:4%;height:7%" aria-label="Inicio">
+          <span>
+            Inicio
+          </span>
+        </a>
+        <a class="hero-link" href="#menu" style="left:35%;top:4%;width:5%;height:7%" aria-label="Menú">
+          <span>
+            Menú
+          </span>
+        </a>
+        <a class="hero-link" href="#promos" style="left:41%;top:4%;width:6%;height:7%" aria-label="Promos">
+          <span>
+            Promos
+          </span>
+        </a>
+        <a class="hero-link" href="#nosotros" style="left:48%;top:4%;width:7%;height:7%" aria-label="Nosotros">
+          <span>
+            Nosotros
+          </span>
+        </a>
+        <a class="hero-link" href="#ubicacion" style="left:57%;top:4%;width:7%;height:7%" aria-label="Ubicación">
+          <span>
+            Ubicación
+          </span>
+        </a>
+        <a class="hero-link" href="#menu" style="left:79%;top:3%;width:15%;height:8%" aria-label="Pedir ahora">
+          <span>
+            Pedir ahora
+          </span>
+        </a>
+        <a class="hero-link" href="#menu" style="left:7%;top:58%;width:18%;height:9%" aria-label="Ver menú">
+          <span>
+            Ver menú
+          </span>
+        </a>
+        <a class="hero-link" href="#menu" style="left:26%;top:58%;width:15%;height:9%" aria-label="Pedir ahora">
+          <span>
+            Pedir ahora
+          </span>
+        </a>
       </section>
       <!-- CINCO TARJETAS DESTACADAS, COMBO Y BENEFICIOS -->
       <section class="wrap" id="menu">
@@ -1176,124 +1240,51 @@ header { display: none; }
             Explora nuestras categorías y encuentra tu favorito
           </p>
         </div>
-        <div class="featured">
-          <article class="producto">
-            <a class="producto-foto" href="#antojitos">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Hamburguesas">
-            </a>
-            <div class="producto-info">
-              <h3>
-                Hamburguesas
-              </h3>
-              <p>
-                Carne jugosa, queso y vegetales frescos.
-              </p>
-              <div class="producto-pie">
-                <small class="desde">
-                  Desde
-                </small>
-                <span class="precio">
-                  $12.000
-                </span>
-              </div>
-              <a class="ver-cat" href="#antojitos">
-                Ver opción
-              </a>
-            </div>
-          </article>
-          <article class="producto">
-            <a class="producto-foto" href="#pizzas">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Pizzas">
-            </a>
-            <div class="producto-info">
-              <h3>
-                Pizzas
-              </h3>
-              <p>
-                Hawaiana, criolla, mexicana, pollo y champiñones.
-              </p>
-              <div class="producto-pie">
-                <small class="desde">
-                  Desde
-                </small>
-                <span class="precio">
-                  $8.000
-                </span>
-              </div>
-              <a class="ver-cat" href="#pizzas">
-                Ver opción
-              </a>
-            </div>
-          </article>
-          <article class="producto">
-            <a class="producto-foto" href="#antojitos">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Salchipapas">
-            </a>
-            <div class="producto-info">
-              <h3>
-                Salchipapas
-              </h3>
-              <p>
-                Sencilla y especial, con salsas de la casa.
-              </p>
-              <div class="producto-pie">
-                <small class="desde">
-                  Desde
-                </small>
-                <span class="precio">
-                  $12.000
-                </span>
-              </div>
-              <a class="ver-cat" href="#antojitos">
-                Ver opción
-              </a>
-            </div>
-          </article>
-          <article class="producto">
-            <a class="producto-foto" href="#antojitos">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1612392062798-2dbaa8f8e6e7?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Perros calientes">
-            </a>
-            <div class="producto-info">
-              <h3>
-                Perros calientes
-              </h3>
-              <p>
-                Sencillo, americano y choriperro.
-              </p>
-              <div class="producto-pie">
-                <small class="desde">
-                  Desde
-                </small>
-                <span class="precio">
-                  $8.000
-                </span>
-              </div>
-              <a class="ver-cat" href="#antojitos">
-                Ver opción
-              </a>
-            </div>
-          </article>
-          <article class="producto">
-            <a class="producto-foto" href="#pizzas">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Lasaña">
-            </a>
-            <div class="producto-info">
-              <h3>
-                Lasaña
-              </h3>
-              <p>
-                Deliciosa lasaña con carne y queso.
-              </p>
-              <div class="producto-pie">
-                <span class="precio">
-                  $20.000
-                </span>
-              </div>
-              <a class="ver-cat" href="#pizzas">
-                Ver opción
-              </a>
-            </div>
-          </article>
+        <div class="featured category-images" aria-label="Once categorías del menú">
+          <!-- PIZZAS -->
+          <a class="category-image" href="#pizzas" aria-label="Ver Pizzas">
+            <img src="images/categoria-pizzas.png" alt="Pizzas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- LASAÑAS -->
+          <a class="category-image" href="#lasanas" aria-label="Ver Lasañas">
+            <img src="images/categoria-lasana.png" alt="Lasañas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- SALCHIPAPAS -->
+          <a class="category-image" href="#salchipapas" aria-label="Ver Salchipapas">
+            <img src="images/categoria-salchipapas.png" alt="Salchipapas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- PERROS CALIENTES -->
+          <a class="category-image" href="#perros" aria-label="Ver Perros calientes">
+            <img src="images/categoria-perros-calientes.png" alt="Perros calientes" loading="lazy" width="256" height="256">
+          </a>
+          <!-- HAMBURGUESAS -->
+          <a class="category-image" href="#hamburguesas" aria-label="Ver Hamburguesas">
+            <img src="images/categoria-hamburguesas.png" alt="Hamburguesas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- PLATOS ESPECIALES -->
+          <a class="category-image" href="#especiales" aria-label="Ver Platos especiales">
+            <img src="images/categoria-especiales.png" alt="Platos especiales" loading="lazy" width="256" height="256">
+          </a>
+          <!-- ANTOJOS -->
+          <a class="category-image" href="#antojos" aria-label="Ver Antojos">
+            <img src="images/categoria-antojos.png" alt="Antojos" loading="lazy" width="256" height="256">
+          </a>
+          <!-- PICADAS -->
+          <a class="category-image" href="#picadas" aria-label="Ver Picadas">
+            <img src="images/categoria-picadas.png" alt="Picadas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- ENSALADAS -->
+          <a class="category-image" href="#ensaladas" aria-label="Ver Ensaladas">
+            <img src="images/categoria-ensaladas.png" alt="Ensaladas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- MAZORCADAS -->
+          <a class="category-image" href="#mazorcadas" aria-label="Ver Mazorcadas">
+            <img src="images/categoria-mazorcadas.png" alt="Mazorcadas" loading="lazy" width="256" height="256">
+          </a>
+          <!-- BEBIDAS -->
+          <a class="category-image" href="#bebidas" aria-label="Ver Bebidas">
+            <img src="images/categoria-bebidas.png" alt="Bebidas" loading="lazy" width="256" height="256">
+          </a>
         </div>
         <div class="promo" id="promos">
           <div class="promo-copy">
@@ -1396,38 +1387,47 @@ header { display: none; }
               Revisa la carta completa y agrégalo a tu pedido
             </p>
           </div>
-          <nav class="menu-tabs">
+          <nav class="menu-tabs" aria-label="Categorías de la carta">
             <a href="#pizzas">
-              Pizzas y lasaña
+              Pizzas
             </a>
-            <a href="#antojitos">
-              Antojitos
+            <a href="#lasanas">
+              Lasañas
+            </a>
+            <a href="#salchipapas">
+              Salchipapas
+            </a>
+            <a href="#perros">
+              Perros calientes
+            </a>
+            <a href="#hamburguesas">
+              Hamburguesas
             </a>
             <a href="#especiales">
               Platos especiales
             </a>
-            <a href="#compartir">
-              Para compartir
+            <a href="#antojos">
+              Antojos
+            </a>
+            <a href="#picadas">
+              Picadas
             </a>
             <a href="#ensaladas">
               Ensaladas
+            </a>
+            <a href="#mazorcadas">
+              Mazorcadas
             </a>
             <a href="#bebidas">
               Bebidas
             </a>
           </nav>
-          <!-- CATEGORÍA: PIZZAS Y LASAÑA -->
-      <section class="menu-group" id="pizzas">
+          <!-- CATEGORÍA: PIZZAS -->
+          <section class="menu-group" id="pizzas">
             <div class="group-head">
               <h2>
                 Pizzas
-                <span>
-                  &amp; lasaña
-                </span>
               </h2>
-              <p>
-                Porciones desde $8.000
-              </p>
             </div>
             <div class="menu-grid">
               <article class="producto">
@@ -1577,6 +1577,16 @@ header { display: none; }
                   </button>
                 </div>
               </article>
+            </div>
+          </section>
+          <!-- CATEGORÍA: LASAÑAS -->
+          <section class="menu-group" id="lasanas">
+            <div class="group-head">
+              <h2>
+                Lasañas
+              </h2>
+            </div>
+            <div class="menu-grid">
               <article class="producto">
                 <a class="producto-foto" href="#menu">
                   <img loading="lazy" src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Lasaña">
@@ -1600,18 +1610,64 @@ header { display: none; }
               </article>
             </div>
           </section>
-          <!-- CATEGORÍA: PERROS, SALCHIPAPAS Y HAMBURGUESAS -->
-      <section class="menu-group" id="antojitos">
+          <!-- CATEGORÍA: SALCHIPAPAS -->
+          <section class="menu-group" id="salchipapas">
             <div class="group-head">
               <h2>
-                Salchipapas,
-                <span>
-                  perros &amp; hamburguesas
-                </span>
+                Salchipapas
               </h2>
-              <p>
-                Los clásicos de Torenza
-              </p>
+            </div>
+            <div class="menu-grid">
+              <article class="producto">
+                <a class="producto-foto" href="#menu">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Salchipapa Sencilla">
+                </a>
+                <div class="producto-info">
+                  <h3>
+                    Salchipapa Sencilla
+                  </h3>
+                  <p>
+                    Papas a la francesa y salchicha.
+                  </p>
+                  <div class="producto-pie">
+                    <span class="precio">
+                      $12.000
+                    </span>
+                  </div>
+                  <button class="btn-agregar" type="button">
+                    Ver opción
+                  </button>
+                </div>
+              </article>
+              <article class="producto">
+                <a class="producto-foto" href="#menu">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Salchipapa Especial">
+                </a>
+                <div class="producto-info">
+                  <h3>
+                    Salchipapa Especial
+                  </h3>
+                  <p>
+                    Salchipapa con ingredientes especiales.
+                  </p>
+                  <div class="producto-pie">
+                    <span class="precio">
+                      $16.000
+                    </span>
+                  </div>
+                  <button class="btn-agregar" type="button">
+                    Ver opción
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- CATEGORÍA: PERROS CALIENTES -->
+          <section class="menu-group" id="perros">
+            <div class="group-head">
+              <h2>
+                Perros calientes
+              </h2>
             </div>
             <div class="menu-grid">
               <article class="producto">
@@ -1677,48 +1733,16 @@ header { display: none; }
                   </button>
                 </div>
               </article>
-              <article class="producto">
-                <a class="producto-foto" href="#menu">
-                  <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Salchipapa Sencilla">
-                </a>
-                <div class="producto-info">
-                  <h3>
-                    Salchipapa Sencilla
-                  </h3>
-                  <p>
-                    Papas a la francesa y salchicha.
-                  </p>
-                  <div class="producto-pie">
-                    <span class="precio">
-                      $12.000
-                    </span>
-                  </div>
-                  <button class="btn-agregar" type="button">
-                    Ver opción
-                  </button>
-                </div>
-              </article>
-              <article class="producto">
-                <a class="producto-foto" href="#menu">
-                  <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Salchipapa Especial">
-                </a>
-                <div class="producto-info">
-                  <h3>
-                    Salchipapa Especial
-                  </h3>
-                  <p>
-                    Salchipapa con ingredientes especiales.
-                  </p>
-                  <div class="producto-pie">
-                    <span class="precio">
-                      $16.000
-                    </span>
-                  </div>
-                  <button class="btn-agregar" type="button">
-                    Ver opción
-                  </button>
-                </div>
-              </article>
+            </div>
+          </section>
+          <!-- CATEGORÍA: HAMBURGUESAS -->
+          <section class="menu-group" id="hamburguesas">
+            <div class="group-head">
+              <h2>
+                Hamburguesas
+              </h2>
+            </div>
+            <div class="menu-grid">
               <article class="producto">
                 <a class="producto-foto" href="#menu">
                   <img loading="lazy" src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Hamburguesa Sencilla">
@@ -1848,17 +1872,11 @@ header { display: none; }
             </div>
           </section>
           <!-- CATEGORÍA: PLATOS ESPECIALES -->
-      <section class="menu-group" id="especiales">
+          <section class="menu-group" id="especiales">
             <div class="group-head">
               <h2>
-                Platos
-                <span>
-                  especiales
-                </span>
+                Platos especiales
               </h2>
-              <p>
-                Preparaciones para disfrutar
-              </p>
             </div>
             <div class="menu-grid">
               <article class="producto">
@@ -1947,18 +1965,12 @@ header { display: none; }
               </article>
             </div>
           </section>
-          <!-- CATEGORÍA: ANTOJOS Y PICADAS -->
-      <section class="menu-group" id="compartir">
+          <!-- CATEGORÍA: ANTOJOS -->
+          <section class="menu-group" id="antojos">
             <div class="group-head">
               <h2>
                 Antojos
-                <span>
-                  &amp; picadas
-                </span>
               </h2>
-              <p>
-                Para compartir o darte gusto
-              </p>
             </div>
             <div class="menu-grid">
               <article class="producto">
@@ -2045,6 +2057,16 @@ header { display: none; }
                   </button>
                 </div>
               </article>
+            </div>
+          </section>
+          <!-- CATEGORÍA: PICADAS -->
+          <section class="menu-group" id="picadas">
+            <div class="group-head">
+              <h2>
+                Picadas
+              </h2>
+            </div>
+            <div class="menu-grid">
               <article class="producto">
                 <a class="producto-foto" href="#menu">
                   <img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Picadas">
@@ -2068,18 +2090,12 @@ header { display: none; }
               </article>
             </div>
           </section>
-          <!-- CATEGORÍA: ENSALADAS Y MAZORCADA -->
-      <section class="menu-group" id="ensaladas">
+          <!-- CATEGORÍA: ENSALADAS -->
+          <section class="menu-group" id="ensaladas">
             <div class="group-head">
               <h2>
                 Ensaladas
-                <span>
-                  &amp; mazorcada
-                </span>
               </h2>
-              <p>
-                Frescas y llenas de sabor
-              </p>
             </div>
             <div class="menu-grid">
               <article class="producto">
@@ -2145,6 +2161,16 @@ header { display: none; }
                   </button>
                 </div>
               </article>
+            </div>
+          </section>
+          <!-- CATEGORÍA: MAZORCADAS -->
+          <section class="menu-group" id="mazorcadas">
+            <div class="group-head">
+              <h2>
+                Mazorcadas
+              </h2>
+            </div>
+            <div class="menu-grid">
               <article class="producto">
                 <a class="producto-foto" href="#menu">
                   <img loading="lazy" src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=85&amp;w=700&amp;auto=format&amp;fit=crop" alt="Mazorcada">
@@ -2169,17 +2195,11 @@ header { display: none; }
             </div>
           </section>
           <!-- CATEGORÍA: BEBIDAS -->
-      <section class="menu-group" id="bebidas">
+          <section class="menu-group" id="bebidas">
             <div class="group-head">
               <h2>
                 Bebidas
-                <span>
-                  frías
-                </span>
               </h2>
-              <p>
-                Algo refrescante para acompañar
-              </p>
             </div>
             <div class="menu-grid">
               <article class="producto">
